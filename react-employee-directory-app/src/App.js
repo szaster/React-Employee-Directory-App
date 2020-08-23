@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import PageHeader from "./components/PageHeader";
 import SearchForm from "./components/SearchForm";
+import SearchResults from "./components/SearchResults";
 import Container from "./components/Container";
 // import Search from "./pages/SearchSort";
 
@@ -33,6 +34,7 @@ class App extends Component {
         <PageHeader />
         <Container>
           <SearchForm />
+          <SearchResults {...this.state} />
         </Container>
       </div>
     );
