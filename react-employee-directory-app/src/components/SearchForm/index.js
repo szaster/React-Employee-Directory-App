@@ -10,11 +10,11 @@ function SearchForm(props) {
   return (
     <form className="search">
       <div className="form-group">
-        <label htmlFor="breed">Breed Name:</label>
+        <label htmlFor="employee">Employee Name:</label>
         <input
           value={props.search}
           onChange={props.handleInputChange}
-          name="breed"
+          name="name"
           list="breeds"
           type="text"
           className="form-control"
