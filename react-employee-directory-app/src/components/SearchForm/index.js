@@ -12,13 +12,12 @@ function SearchForm(props) {
       <div className="form-group">
         <label htmlFor="employee">Employee Name:</label>
         <input
-          value={props.search}
+          // value={props.}
           onChange={props.handleInputChange}
           name="name"
-          list="employees"
           type="text"
           className="form-control"
-          placeholder="Type in employee name to search"
+          placeholder="Type employee name to search"
           id="search"
         />
       </div>
