@@ -18,21 +18,9 @@ function SearchForm(props) {
           list="employees"
           type="text"
           className="form-control"
-          placeholder="Type in employee name"
-          id="employee"
+          placeholder="Type in employee name to search"
+          id="search"
         />
-        <datalist id="employees">
-          {props.employees.map((employee) => (
-            <option value={employee} key={employee} />
-          ))}
-        </datalist>
-        <button
-          type="submit"
-          onClick={props.handleFormSubmit}
-          className="btn btn-success"
-        >
-          Search
-        </button>
       </div>
     </form>
   );
