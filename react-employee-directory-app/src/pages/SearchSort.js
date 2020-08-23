@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { EmployeeApi } from "../utils/API";
 import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
-// import SearchResults from "../components/SearchResults";
+import SearchResults from "../components/SearchResults";
 
 class Search extends Component {
   state = {

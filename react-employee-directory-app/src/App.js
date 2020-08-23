@@ -1,11 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Search from "./pages/SearchSort";
+import React, { Component } from "react";
+// import axios from "axios";
+import PageHeader from "./components/PageHeader";
+import { render } from "@testing-library/react";
+// import Search from "./pages/SearchSort";
 
 function App() {
+  render();
   return (
     <div>
-      <Route exact path="/" component={Search} />
+      <PageHeader />
     </div>
   );
 }

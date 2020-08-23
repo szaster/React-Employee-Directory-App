@@ -15,15 +15,15 @@ function SearchForm(props) {
           value={props.search}
           onChange={props.handleInputChange}
           name="name"
-          list="breeds"
+          list="employees"
           type="text"
           className="form-control"
-          placeholder="Type in a dog breed to begin"
-          id="breed"
+          placeholder="Type in employee name"
+          id="employee"
         />
-        <datalist id="breeds">
-          {props.breeds.map((breed) => (
-            <option value={breed} key={breed} />
+        <datalist id="employees">
+          {props.employees.map((employee) => (
+            <option value={employee} key={employee} />
           ))}
         </datalist>
         <button
