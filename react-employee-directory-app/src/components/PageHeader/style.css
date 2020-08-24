@@ -1,0 +1,7 @@
+.jumbotron {
+  background-image: url("./image.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 80%;
+  min-height: 400px;
+}
