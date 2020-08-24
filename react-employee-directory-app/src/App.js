@@ -5,10 +5,10 @@ import SearchForm from "./components/SearchForm";
 import Container from "./components/Container";
 import EmployeeTable from "./components/EmployeeTable";
 
-function nameContainsString(employee, stringToSearch) {
-  const name = employee.name.first + " " + employee.name.last;
-  return name.toLowerCase().includes(stringToSearch.toLowerCase());
-}
+// function nameContainsString(employee, stringToSearch) {
+//   const name = employee.name.first + " " + employee.name.last;
+//   return name.toLowerCase().includes(stringToSearch.toLowerCase());
+// }
 
 class App extends Component {
   state = {
@@ -39,9 +39,14 @@ class App extends Component {
       return this.state.employees;
     } else {
       return this.state.employees.filter((employee) =>
-        nameContainsString(employee, this.state.searchWord)
+        this.nameContainsString(employee, this.state.searchWord)
       );
     }
+  }
+
+  nameContainsString(employee, stringToSearch) {
+    const name = employee.name.first + " " + employee.name.last;
+    return name.toLowerCase().includes(stringToSearch.toLowerCase());
   }
 
   onNewSearchWord(word) {
@@ -51,6 +56,8 @@ class App extends Component {
       isLoaded: this.state.isLoaded,
     });
   }
+
+  sortName = (event) => {};
 
   render() {
     return (
