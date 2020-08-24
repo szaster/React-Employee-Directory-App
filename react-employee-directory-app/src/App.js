@@ -6,11 +6,6 @@ import Container from "./components/Container";
 import EmployeeTable from "./components/EmployeeTable";
 import { SortingCategory, sortByName, sortByDob } from "./components/Sorting";
 
-// function nameContainsString(employee, stringToSearch) {
-//   const name = employee.name.first + " " + employee.name.last;
-//   return name.toLowerCase().includes(stringToSearch.toLowerCase());
-// }
-
 class App extends Component {
   state = {
     employees: [],

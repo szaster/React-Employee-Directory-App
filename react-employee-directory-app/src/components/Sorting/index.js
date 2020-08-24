@@ -10,16 +10,40 @@ function compareNames(a, b) {
   return 0; //names must be equal positions unchanged
 }
 
-function compareDobs(a, b) {
+function compareDob(a, b) {
+  let empA = new Date(a.dob.date);
+  let empB = new Date(b.dob.date);
+  if (empA < empB) {
+    return -1;
+  }
+  if (empA > empB) {
+    return 1;
+  }
   return 0;
 }
 
+let orderDescent = true;
+
 export function sortByName(employees) {
-  return employees.sort(compareNames);
+  const sorted = employees.sort(compareNames);
+  if (orderDescent) {
+    orderDescent = false;
+    return sorted;
+  } else {
+    orderDescent = true;
+    return sorted.reverse();
+  }
 }
 
 export function sortByDob(employees) {
-  return employees.sort(compareDobs);
+  const sorted = employees.sort(compareDob);
+  if (orderDescent) {
+    orderDescent = false;
+    return sorted;
+  } else {
+    orderDescent = true;
+    return sorted.reverse();
+  }
 }
 
 export class SortingCategory {
