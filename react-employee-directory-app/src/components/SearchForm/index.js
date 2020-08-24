@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import PageHeader from "../PageHeader";
 
 class SearchForm extends React.Component {
   onUserTyped(event) {

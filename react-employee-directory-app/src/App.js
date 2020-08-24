@@ -5,6 +5,11 @@ import SearchForm from "./components/SearchForm";
 import Container from "./components/Container";
 import EmployeeTable from "./components/EmployeeTable";
 
+function nameContainsString(employee, stringToSearch) {
+  const name = employee.name.first + " " + employee.name.last;
+  return name.toLowerCase().includes(stringToSearch.toLowerCase());
+}
+
 class App extends Component {
   state = {
     employees: [],
@@ -29,15 +34,13 @@ class App extends Component {
       .catch((err) => console.log("Error in getting employee data", err));
   };
 
-  handleInputChange = (event) => {
-    const value = event.target.value;
-  };
-
   filteredEmployees() {
     if (this.state.searchWord === "") {
       return this.state.employees;
     } else {
-      return [];
+      return this.state.employees.filter((employee) =>
+        nameContainsString(employee, this.state.searchWord)
+      );
     }
   }
 
