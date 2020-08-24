@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import TableRow from "../TableRow";
-import SortingCategory from "../Sorting";
-
-function sortBy(category) {
-  console.log("event", category);
-}
+import { SortingCategory } from "../Sorting";
 
 class EmployeeTable extends Component {
-  constructor(props) {
-    super(props);
+  sortBy(category) {
+    this.props.sortBy(category);
   }
 
   render() {
@@ -20,7 +16,7 @@ class EmployeeTable extends Component {
             <th>
               Name&ensp;
               <span
-                onClick={(e) => sortBy(SortingCategory.ByName)}
+                onClick={(e) => this.sortBy(SortingCategory.ByName)}
                 style={{ cursor: "pointer" }}
               >
                 <i className="fa fa fa-sort"></i>
@@ -31,7 +27,7 @@ class EmployeeTable extends Component {
             <th>
               DOB&ensp;
               <span
-                onClick={(e) => sortBy(SortingCategory.ByDOB)}
+                onClick={(e) => this.sortBy(SortingCategory.ByDOB)}
                 style={{ cursor: "pointer" }}
               >
                 <i className="fa fa fa-sort"></i>{" "}

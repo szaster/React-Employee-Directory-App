@@ -4,6 +4,7 @@ import PageHeader from "./components/PageHeader";
 import SearchForm from "./components/SearchForm";
 import Container from "./components/Container";
 import EmployeeTable from "./components/EmployeeTable";
+import { SortingCategory, sortByName, sortByDob } from "./components/Sorting";
 
 // function nameContainsString(employee, stringToSearch) {
 //   const name = employee.name.first + " " + employee.name.last;
@@ -57,7 +58,32 @@ class App extends Component {
     });
   }
 
-  sortName = (event) => {};
+  sortBy(category) {
+    switch (category) {
+      case SortingCategory.ByName:
+        {
+          const sorted = sortByName(this.state.employees);
+          this.setState({
+            employees: sorted,
+            searchWord: this.state.searchWord,
+            isLoaded: this.state.isLoaded,
+          });
+        }
+        break;
+      case SortingCategory.ByDOB:
+        {
+          const sorted = sortByDob(this.state.employees);
+          this.setState({
+            employees: sorted,
+            searchWord: this.state.searchWord,
+            isLoaded: this.state.isLoaded,
+          });
+        }
+        break;
+      default:
+        return;
+    }
+  }
 
   render() {
     return (
@@ -65,7 +91,10 @@ class App extends Component {
         <PageHeader />
         <Container>
           <SearchForm onNewSearchWord={(word) => this.onNewSearchWord(word)} />
-          <EmployeeTable employees={this.filteredEmployees()} />
+          <EmployeeTable
+            employees={this.filteredEmployees()}
+            sortBy={(cat) => this.sortBy(cat)}
+          />
         </Container>
       </div>
     );
