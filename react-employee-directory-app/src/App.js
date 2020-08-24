@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import PageHeader from "./components/PageHeader";
 import SearchForm from "./components/SearchForm";
-import SearchResults from "./components/SearchResults";
+import SearchResults from "./components/EmployeeList";
 import Container from "./components/Container";
+import EmployeeList from "./components/EmployeeList";
 // import Search from "./pages/SearchSort";
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
         <PageHeader />
         <Container>
           <SearchForm />
-          <SearchResults {...this.state} />
+          <EmployeeList employees={this.state.employees} />
         </Container>
       </div>
     );
