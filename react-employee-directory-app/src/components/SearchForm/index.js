@@ -1,28 +1,32 @@
 import React from "react";
 import "./style.css";
+import PageHeader from "../PageHeader";
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
+class SearchForm extends React.Component {
+  onUserTyped(event) {
+    // text that user have entered in the search field
+    const text = event.target.value;
+    // call a function that will set new value for the "searchWord" in the parent component.
+    this.props.onNewSearchWord(text);
+  }
 
-// const breeds = ["a", "b", "c"];
-// const options = breeds.map((breed) => <option value={breed} key={breed} />);
-
-function SearchForm(props) {
-  return (
-    <form className="search">
-      <div className="form-group">
-        <label htmlFor="employee">Employee Name:</label>
-        <input
-          // value={props.}
-          onChange={props.handleInputChange}
-          name="name"
-          type="text"
-          className="form-control"
-          placeholder="Type employee name to search"
-          id="search"
-        />
-      </div>
-    </form>
-  );
+  render() {
+    return (
+      <form className="search">
+        <div className="form-group">
+          <label htmlFor="employee">Employee Name:</label>
+          <input
+            onChange={(e) => this.onUserTyped(e)}
+            name="searchWord"
+            type="text"
+            className="form-control"
+            placeholder="Type employee name to search"
+            id="search"
+          />
+        </div>
+      </form>
+    );
+  }
 }
 
 export default SearchForm;

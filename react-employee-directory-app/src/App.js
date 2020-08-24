@@ -8,6 +8,7 @@ import EmployeeTable from "./components/EmployeeTable";
 class App extends Component {
   state = {
     employees: [],
+    searchWord: "",
     isLoaded: true,
   };
   componentDidMount() {
@@ -28,13 +29,33 @@ class App extends Component {
       .catch((err) => console.log("Error in getting employee data", err));
   };
 
+  handleInputChange = (event) => {
+    const value = event.target.value;
+  };
+
+  filteredEmployees() {
+    if (this.state.searchWord === "") {
+      return this.state.employees;
+    } else {
+      return [];
+    }
+  }
+
+  onNewSearchWord(word) {
+    this.setState({
+      employees: this.state.employees,
+      searchWord: word,
+      isLoaded: this.state.isLoaded,
+    });
+  }
+
   render() {
     return (
       <div>
         <PageHeader />
         <Container>
-          <SearchForm />
-          <EmployeeTable employees={this.state.employees} />
+          <SearchForm onNewSearchWord={(word) => this.onNewSearchWord(word)} />
+          <EmployeeTable employees={this.filteredEmployees()} />
         </Container>
       </div>
     );

@@ -16,7 +16,7 @@ function TableRow(props) {
         />
       </td>
       <td>
-        {props.employee.name.first}
+        {props.employee.name.first}&ensp;
         {props.employee.name.last}
       </td>
       <td>{props.employee.phone}</td>
