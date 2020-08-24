@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import PageHeader from "./components/PageHeader";
 import SearchForm from "./components/SearchForm";
-import SearchResults from "./components/EmployeeList";
 import Container from "./components/Container";
-import EmployeeList from "./components/EmployeeList";
-// import Search from "./pages/SearchSort";
+import EmployeeTable from "./components/EmployeeTable";
 
 class App extends Component {
   state = {
@@ -15,6 +13,7 @@ class App extends Component {
   componentDidMount() {
     this.getEmployees();
   }
+
   getEmployees = () => {
     const url =
       "https://randomuser.me/api/?inc=gender,name,email,phone,dob,picture&results=20";
@@ -35,7 +34,7 @@ class App extends Component {
         <PageHeader />
         <Container>
           <SearchForm />
-          <EmployeeList employees={this.state.employees} />
+          <EmployeeTable employees={this.state.employees} />
         </Container>
       </div>
     );
