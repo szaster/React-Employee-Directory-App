@@ -1,6 +1,7 @@
 # Employee Directory
 
 [Live website on GitHub](https://szaster.github.io/React-Employee-Directory-App/)
+
 [GitHub repo](https://github.com/szaster/React-Employee-Directory-App)
 
 ## Description
