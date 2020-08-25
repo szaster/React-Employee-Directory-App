@@ -1,8 +1,27 @@
-# Unit 19 React Homework: Employee Directory
+# Employee Directory
 
-## Overview
+[Live website on GitHub](https://szaster.github.io/React-Employee-Directory-App/)
+[GitHub repo](https://github.com/szaster/React-Employee-Directory-App)
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+## Description
+
+This application allows to view employee directory, sort employees alphabetically, by DOB, and perform employee search by name to quickly access their information.
+
+The UI of his application is written in React.
+
+## Table of contents
+
+[User Story](#user-story)
+
+[Business Context](#business-context)
+
+[Images](#images)
+
+[Installation](#installation)
+
+[License](#license)
+
+[Questions](#questions)
 
 ## User Story
 
@@ -12,40 +31,16 @@ For this assignment, you'll create a employee directory with React. This assignm
 
 An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
-## Acceptance Criteria
+## Installation and usage
 
-Given a table of random users, when the user loads the page, a table of employees should render.
+No installation. Just open the [Live website](https://szaster.github.io/React-Employee-Directory-App/)
 
-The user should be able to:
+## License
 
-- Sort the table by at least one category
+MIT license.
 
-- Filter the users by at least one property.
+## Questions
 
-## Commit Early and Often
+If you any additional questions you can reach me via my [Github user profile](https://www.github.com/szaster) or [write me directly](mailto:szaster@protonmail.com).
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-- Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-- Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-- Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-- Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-- the URL to the deployed application
-
-- the URL to the Github repository
+You also can [file an issue](https://github.com/szaster/React-Employee-Directory-App/issues) if you find a bug.
